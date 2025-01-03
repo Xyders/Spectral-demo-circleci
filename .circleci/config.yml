@@ -32,7 +32,7 @@ jobs:
           POSTGRES_PASSWORD: "12345"
     steps:
       - checkout
-      - run: curl -L "https://spectral-us.checkpoint.com/latest/x/sh?dsn=$SPECTRAL_DSN" | sh
+      - run: curl -L "https://spectral-eu.checkpoint.com/latest/x/sh?dsn=$SPECTRAL_DSN" | sh
       # This takes your SPECTRAL_DSN from secret store in CircleCI
       - run: $HOME/.spectral/spectral scan --ok --include-tags base,audit,iac
       - restore_cache:
